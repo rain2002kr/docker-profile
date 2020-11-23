@@ -1,3 +1,9 @@
+FROM node:latest
+
 # Comment
 RUN echo 'we are running some # of cool things'
+
+# this is a comment-line
+RUN echo hello
+RUN echo world
 
