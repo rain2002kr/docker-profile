@@ -1,9 +1,21 @@
-FROM node:latest
+ARG VERSION=latest
+
+FROM ubuntu:$VERSION
+
+RUN echo $VERSION > image_version
 
 # Comment
-RUN echo 'we are running some # of cool things'
+RUN echo 'we are running ubuntu install'
 
-# this is a comment-line
-RUN echo hello
-RUN echo world
+# USER SETTING
+USER rain2002kr
+
+# WORKDIR SETTING
+WORKDIR /app
+
+RUN apt-get update
+
+RUN apt-install node -y
+
+CMD ["node-v"]
 
